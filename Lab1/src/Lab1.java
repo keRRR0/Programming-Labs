@@ -26,12 +26,14 @@ public class Lab1 {
                     case 11:
                     case 15:
                     case 17:
-                        calc[i][j] = Math.pow(Math.pow(Math.tan(x[j]), 1.0 / 3.0) / (Math.tan(Math.exp(x[j])) - 2.0 / 3.0),
-                                Math.pow(Math.pow(x[j] * (x[j] + 1), x[j]), 0.5 * (1.0 / 3.0 +
-                                        Math.pow((x[j] + 3.0 / 4.0) / x[j], x[j]))));
+                        calc[i][j] = Math.pow(Math.pow(Math.tan(x[j]), 1.0 / 3.0) /
+                                        (Math.tan(Math.exp(x[j])) - 2.0 / 3.0),
+                                Math.pow(Math.pow(x[j] * (x[j] + 1), x[j]), 0.5 *
+                                        (1.0 / 3.0 + Math.pow((x[j] + 3.0 / 4.0) / x[j], x[j]))));
                         break;
                     default:
                         calc[i][j] = Math.exp(Math.sin(Math.tan(Math.pow(1.0 / 3.0 + x[j], x[j]))));
+                        break;
                 }
                 System.out.printf("%.3f", calc[i][j]);
                 System.out.print("  ");
