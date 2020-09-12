@@ -1,7 +1,6 @@
 public class Lab1 {
 
     public static void main(String[] args) {
-        System.out.print("\u001B[32m");
         /* Массив из нечетных чисел от 5 до 17 включительно в порядке убывания */
         byte n = 0;
         int[] d = new int[(17 - 5) / 2 + 1];
@@ -37,7 +36,7 @@ public class Lab1 {
                         break;
                 }
                 System.out.printf("%-9.3f", calc[i][j]);
-                System.out.print("  ");
+                System.out.print("| ");
             }
             System.out.println();
         }
