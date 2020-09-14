@@ -1,19 +1,21 @@
+import java.util.Arrays;
+
 public class Lab1 {
 
     public static void main(String[] args) {
         /* Массив из нечетных чисел от 5 до 17 включительно в порядке убывания */
-        byte n = 0;
-        int[] d = new int[(17 - 5) / 2 + 1];
-        for (byte i = 17; i >= 5; i--) {
-            if (i % 2 != 0)
-                d[n] = i;
-            else
-                n++;
+        int n = 0;
+        int[] d = new int[7];
+        for (int i = 17; i >= 5; i = i - 2) {
+            d[n] = i;
+            n++;
         }
         /* Массив из 15 случайных чисел от -2.0 до 15.0 */
         float[] x = new float[15];
+        final int UPPER_BOUND = 15;
+        final int LOWER_BOUND = -2;
         for (byte i = 0; i < 15; i++) {
-            x[i] = (float) (Math.random() * (15 - -2) - 2);
+            x[i] = (float) (Math.random() * (UPPER_BOUND - LOWER_BOUND) + LOWER_BOUND);
         }
         /* Вычисления */
         double[][] calc = new double[7][15];
@@ -28,15 +30,14 @@ public class Lab1 {
                     case 17:
                         calc[i][j] = Math.pow(Math.pow(Math.tan(x[j]), 1.0 / 3.0) /
                                         (Math.tan(Math.exp(x[j])) - 2.0 / 3.0),
-                                Math.pow(Math.pow(x[j] * (x[j] + 1), x[j]), 0.5 *
+                                        Math.pow(Math.pow(x[j] * (x[j] + 1), x[j]), 0.5 *
                                         (1.0 / 3.0 + Math.pow((x[j] + 3.0 / 4.0) / x[j], x[j]))));
                         break;
                     default:
                         calc[i][j] = Math.exp(Math.sin(Math.tan(Math.pow(1.0 / 3.0 + x[j], x[j]))));
                         break;
                 }
-                System.out.printf("%-9.3f", calc[i][j]);
-                System.out.print("| ");
+                System.out.printf("%-9.3f  ", calc[i][j]);
             }
             System.out.println();
         }
